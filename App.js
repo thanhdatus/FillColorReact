@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import FillColor from './src/components/FillColor';
 
 export default function App() {
