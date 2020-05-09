@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import Btn from './src/components/Btn';
 
 export default function App() {
   // Save history of colors
@@ -67,35 +68,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.btnContainer}>
-        <TouchableOpacity
-          style={{ ...styles.btn, backgroundColor: 'red' }}
-          onPress={onPressRedButton}
-          underlayColor='#fff'
-        ></TouchableOpacity>
-        <TouchableOpacity
-          style={{ ...styles.btn, backgroundColor: 'green' }}
+        <Btn style={{ backgroundColor: 'red' }} onPress={onPressRedButton} />
+        <Btn
+          style={{ backgroundColor: 'green' }}
           onPress={onPressGreenButton}
-          underlayColor='#fff'
-        ></TouchableOpacity>
-        <TouchableOpacity
-          style={{ ...styles.btn, backgroundColor: 'blue' }}
-          onPress={onPressBlueButton}
-          underlayColor='#fff'
-        ></TouchableOpacity>
-        <TouchableOpacity
-          style={styles.btn}
-          onPress={onPressUndoButton}
-          underlayColor='#fff'
-        >
-          <Text>Undo</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.btn}
-          onPress={onPressRedoButton}
-          underlayColor='#fff'
-        >
-          <Text>Redo</Text>
-        </TouchableOpacity>
+        />
+        <Btn style={{ backgroundColor: 'blue' }} onPress={onPressBlueButton} />
+        <Btn onPress={onPressUndoButton} text='Undo' />
+        <Btn onPress={onPressRedoButton} text='Redo' />
       </View>
       <View style={styles.squareContainer}>
         <View style={{ ...styles.square, ...stylebtn }}></View>
@@ -112,15 +92,6 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
     flexDirection: 'row',
-  },
-  btn: {
-    width: 40,
-    height: 40,
-    borderWidth: 2,
-    borderColor: 'black',
-    justifyContent: 'center',
-    marginLeft: 10,
-    marginTop: 10,
   },
   squareContainer: {
     flexGrow: 1,
